@@ -23,6 +23,7 @@ def changeColor(even=None):
 	color = color[1]
 	colorButton.config(bg = color)
 	messageEntry.config(foreground = color)
+	userLabel.config(foreground = color)
 
 	
 if __name__ == "__main__":
@@ -30,7 +31,7 @@ if __name__ == "__main__":
 	signIn.title("RWC Login")
 	signIn.protocol("WM_DELETE_WINDOW", close)
 	
-	userLabel = Label(signIn, text = "Enter your username. ")
+	userLabel = Label(signIn, text = "Enter your username:   ")
 	userLabel.grid(row=0, column=0)
 
 	username = StringVar()
@@ -61,7 +62,7 @@ if __name__ == "__main__":
         #bot frame
 	botFrame = Frame(chatBox, height = 1)
 	botFrame.pack(fill=X)
-	userLabel = Label(botFrame, text = "%s: " % username.get())
+	userLabel = Label(botFrame, text = "%s: " % username.get(), foreground=color)
 	userLabel.pack(side=LEFT)
 	
 	messageEntry = Entry(botFrame, textvariable=message, foreground=color)

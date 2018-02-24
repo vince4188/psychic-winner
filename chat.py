@@ -15,6 +15,7 @@ def send(event=None):
         if message.get().strip():
                 listBox.insert(END, "%s: %s" % (username.get(), message.get()))
                 listBox.itemconfig(END, {'fg': color})
+                listBox.see(END)
                 message.set("")
 
 def changeColor(even=None):
